@@ -553,7 +553,7 @@ def convert_video_to_audio_and_upload(video_path, bucket_name):
 
 def transcribe_audio(audio_s3_uri):
     # Configuración de cliente para AWS Transcribe
-    transcribe = boto3.client('transcribe')
+    transcribe = boto3.client('transcribe',region_name='us-east-1')
     
     # Generar un nombre único para el trabajo de transcripción
     job_name = f"transcription-job-{uuid.uuid4()}"

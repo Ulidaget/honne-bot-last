@@ -23,15 +23,15 @@ logger = logging.getLogger(__name__)
 # CLIENT_ID = 'm47hdqpevjk6hv6m7ul9jqonv'
 # CLIENT_SECRET = '18i75h8ho88rrkq2gnkg1f6amdm09ilt6g137iot4b897ttqa8ps'
 
-# # Configuración de AWS Cognito
-# USER_POOL_ID = 'us-east-1_KeiDmWKcR'
-# CLIENT_ID = '7en9sules21m9it5ut6mg2f1ht'
-# CLIENT_SECRET = '51otvvc1j627vni0pvgr4b9e3fin6ogsfmfehdni888u67gioee'
-
 # Configuración de AWS Cognito
-USER_POOL_ID = 'us-east-1_ALLWTTINx'
-CLIENT_ID = '2o43o2eolu91kh7mibr725pblo'
-CLIENT_SECRET = '1j4lcb9dplma8inndues0cgrntstp51ugvkjb6efgvrrb7oetm26'
+USER_POOL_ID = 'us-east-1_KeiDmWKcR'
+CLIENT_ID = '7en9sules21m9it5ut6mg2f1ht'
+CLIENT_SECRET = '51otvvc1j627vni0pvgr4b9e3fin6ogsfmfehdni888u67gioee'
+
+# # Configuración de AWS Cognito
+# USER_POOL_ID = 'us-east-1_ALLWTTINx'
+# CLIENT_ID = '2o43o2eolu91kh7mibr725pblo'
+# CLIENT_SECRET = '1j4lcb9dplma8inndues0cgrntstp51ugvkjb6efgvrrb7oetm26'
 
 REGION_NAME = 'us-east-1'
 
@@ -732,28 +732,6 @@ def main():
                 st.error("You don't have permission to access the admin page.")
                 landing_page()  
 
-# def invoice_extraction_page():
-#     st.title("Extracción de Datos de Facturas")
-
-#     # Subir la imagen
-#     uploaded_image = st.file_uploader("Cargar imagen de factura", type=["jpg", "jpeg", "png", "pdf"])
-
-#     if uploaded_image is not None:
-       
-#         st.image(uploaded_image, caption="Imagen cargada", use_column_width=True)
-
-#         # Leer el contenido de la imagen como bytes
-#         image_bytes = uploaded_image.read()
-        
-#         # Convertir la imagen a base64
-#         image_base64 = base64.b64encode(image_bytes).decode('utf-8')
-        
-#         # Enviar el texto extraído a Claude para procesar
-#         if st.button("Procesar datos de factura"):
-#             claude_response = tools.process_invoice_with_claude(image_base64)
-#             st.write("Respuesta de Claude:")
-#             st.write(claude_response)
-
 def invoice_extraction_page():
     st.title("Extracción de Datos de Facturas")
 
@@ -779,45 +757,6 @@ def invoice_extraction_page():
             claude_response = tools.process_invoice_with_claude(image_base64)
             st.write("Respuesta de Claude:")
             st.write(claude_response)
-
-# def video_extraction_page():
-#     st.title("Extracción de Texto de Video")
-
-#     # Subir el video
-#     uploaded_video = st.file_uploader("Cargar video", type=["mp4", "mov", "avi"])
-
-#     if uploaded_video is not None:
-#         # Mostrar el video subido
-#         st.video(uploaded_video)
-
-#         # Guardar el video temporalmente en un archivo
-#         video_path = "temp_video.mp4"
-#         with open(video_path, "wb") as f:
-#             f.write(uploaded_video.read())
-
-#         # Convertir el video a audio y subirlo a S3
-#         audio_s3_uri = tools.convert_video_to_audio_and_upload(video_path, "your-audio-bucket-honne")
-
-#         # Procesar el archivo de audio con AWS Transcribe
-#         with st.spinner("Transcribiendo el audio..."):
-#             transcribed_text = tools.transcribe_audio(audio_s3_uri)
-
-#         # Mostrar el texto transcrito
-#         if transcribed_text:
-#             st.write("Texto extraído del video:")
-#             st.write(transcribed_text)
-
-#             # Obtener palabras clave con Claude
-#             if st.button("Extraer palabras clave"):
-#                 keywords = tools.extract_keywords_with_claude(transcribed_text)
-#                 st.write("Palabras clave:")
-#                 st.write(keywords)
-
-#             # Obtener resumen con Claude
-#             if st.button("Generar resumen"):
-#                 summary = tools.summarize_text_with_claude(transcribed_text)
-#                 st.write("Resumen del texto:")
-#                 st.write(summary)
 
 def video_extraction_page():
     st.title("Extracción de Texto de Video")

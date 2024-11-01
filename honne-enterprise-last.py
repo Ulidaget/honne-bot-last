@@ -19,14 +19,14 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Configuración de AWS Cognito
-# USER_POOL_ID = 'us-east-1_DzVB7yQ87'
-# CLIENT_ID = 'm47hdqpevjk6hv6m7ul9jqonv'
-# CLIENT_SECRET = '18i75h8ho88rrkq2gnkg1f6amdm09ilt6g137iot4b897ttqa8ps'
+USER_POOL_ID = 'us-east-1_DzVB7yQ87'
+CLIENT_ID = 'm47hdqpevjk6hv6m7ul9jqonv'
+CLIENT_SECRET = '18i75h8ho88rrkq2gnkg1f6amdm09ilt6g137iot4b897ttqa8ps'
 
 # Configuración de AWS Cognito
-USER_POOL_ID = 'us-east-1_KeiDmWKcR'
-CLIENT_ID = '7en9sules21m9it5ut6mg2f1ht'
-CLIENT_SECRET = '51otvvc1j627vni0pvgr4b9e3fin6ogsfmfehdni888u67gioee'
+# USER_POOL_ID = 'us-east-1_KeiDmWKcR'
+# CLIENT_ID = '7en9sules21m9it5ut6mg2f1ht'
+# CLIENT_SECRET = '51otvvc1j627vni0pvgr4b9e3fin6ogsfmfehdni888u67gioee'
 
 # # Configuración de AWS Cognito
 # USER_POOL_ID = 'us-east-1_ALLWTTINx'
